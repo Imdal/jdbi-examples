@@ -17,8 +17,10 @@ public class Main {
             dao.insertUser(user);
             User user2 = User.builder().id((long) 5654231).username("username").password("password").name("name").email("email").dob(LocalDate.parse("2020-04-11")).gender(User.Gender.MALE).enabled(true).build();
             dao.insertUser(user2);
-            dao.findByID((long) 5654231);
+            dao.findByID((long) 6900345);
             dao.findByUsername("imdal");
+            dao.list().stream().forEach(System.out::println);
+            System.out.println("After delete:");
             dao.delete(user2);
             dao.list().stream().forEach(System.out::println);
 
